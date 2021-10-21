@@ -1,0 +1,71 @@
+@import "./src/sass/helpers/var"
+
+.team
+    display: flex
+    width: 100%
+
+    &--wrapper
+        display: flex
+        flex-direction: column
+        width: 100%
+        justify-content: center
+        padding: 10% 0
+
+    &__title
+        font-size: calc( 2.5rem + 1vw )
+
+    &__description
+        font-size: calc( 0.65rem + 1vw )
+        padding: 2.5% 0
+
+.team-group
+    display: grid
+    width: 100%
+    grid-template-columns: repeat(3, auto)
+    margin-top: 10%
+    grid-gap: 2.5rem
+
+.team-card
+    display: flex
+    flex-direction: column
+    padding: 30% 2.5% 5%
+    text-align: center
+    position: relative
+    border: 1px solid $orange-yellow
+    transition: $transition
+
+    &__img
+        position: absolute
+        width: 17.5vh
+        top: 0
+        left: 50%
+        height: 17.5vh
+        transform: translate(-50%, -50%)
+        border-radius: 50%
+
+    &__title
+        font-size: calc( 0.75rem + 1vw )
+        font-weight: 500
+        transition: $transition
+
+    &__caption
+        margin: 5% 0
+        font-size: calc( 0.35rem + 1vw )
+
+    &__description
+        font-size: calc( 0.25rem + 1vw )
+        margin-bottom: 5%
+
+    &:hover
+        background-color: rgba($orange-yellow, 0.55%)
+        transition: $transition
+        color: $white
+
+        .team-card__title
+            transition: $transition
+            color: $white
+
+        .team-card__img
+            img
+                transition: $transition
+                transform: rotateZ(5deg) scale(1.1)

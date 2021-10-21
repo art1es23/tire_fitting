@@ -1,0 +1,49 @@
+@import "./src/sass/helpers/var"
+
+.services
+    display: flex
+    width: 100%
+
+    &--wrapper
+        display: grid
+        width: 100%
+        grid-template-columns: repeat(3, auto)
+        grid-gap: 2.5rem
+        align-content: center
+        padding: 10% 0
+
+.services-group
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 2.5%
+
+    &__item
+        margin: 2.5% 0
+    &__img
+        img
+            transition: $transition
+
+    &__title
+        font-size: calc( 1rem + 1vw )
+        position: relative
+        padding-bottom: 1.25rem
+        &::after
+            display: block
+            content: ''
+            position: absolute
+            width: 25%
+            height: 3px
+            bottom: 0
+            left: 0
+            background-color: $orange-yellow
+
+    &__description
+        text-align: justify
+        font-size: calc( 0.25rem + 1vw )
+
+    &:hover
+        .services-group__img
+            img
+                transition: $transition
+                transform: scale(1.2)

@@ -1,0 +1,182 @@
+@import "./src/sass/helpers/var"
+
+*, *:before, *:after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  color: $black
+  display: flex
+  flex-direction: column
+  overflow-x: hidden
+
+section
+  width: 100%
+  &:nth-child(even)
+    background-color: $sand-olive
+
+h1, h2, h3, h4
+  color: $black
+
+a
+  color: $black
+  text-decoration: none
+  text-align: center
+
+ul
+  list-style: none
+
+svg
+  width: 100%
+  height: 100%
+  object-fit: contain
+
+.container
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+  width: 75%
+
+.main-content
+  width: 100%
+  display: flex
+  flex-direction: column
+  z-index: 5
+  background-color: $white
+
+.link
+  display: flex
+  padding: 0.75rem 1rem
+  font-size: calc( 0.25rem + 1vw )
+  justify-content: center
+  align-items: center
+  text-align: center
+  line-height: calc( 0.3rem + 1vw )
+  width: 10vw
+  background-color: $orange-yellow
+  color: $white
+  transition: $transition
+  border: 1px solid $white
+
+  &:hover
+    background-color: rgba($black, 0.25)
+    cursor: pointer
+
+  &--wrapper
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    width: 100%
+
+.bold
+  font-weight: 600
+  margin-right: 0.5rem
+
+.img-wrapper
+  width: 100%
+  height: 100%
+  overflow: hidden
+  position: relative
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    transition: $transition
+
+.list-item--margin
+  margin-bottom: 2.5%
+
+.scroll--hidden
+  overflow: hidden
+
+.loader
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  pointer-events: none
+  z-index: 9999
+  visibility: hidden
+  opacity: 0
+  background-color: $orange-yellow
+
+.wrapper
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+
+.title
+  font-weight: 500
+  position: relative
+  padding: 2.5% 0
+
+.scroll-up
+  position: fixed
+  bottom: 0
+  right: 0
+  background-color: $orange-yellow
+  width: 2.5vw
+  height: 2.5vw
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 101
+  transition: $transition
+  animation: hide 0.3s ease-in forwards
+
+  &::before
+    content: ''
+    position: fixed
+    display: block
+    background-color: $orange-yellow
+    height: 100px
+    z-index: 99
+    width: 100px
+    right: -50px
+    bottom: -50px
+    transform: rotate(45deg)
+
+  &__link
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50%
+    height: 50%
+    z-index: 101
+    background-image: url("../img/sprite.svg#up-arrow")
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    transform: rotateZ(-45deg)
+
+  &--hidden
+    transition: $transition
+    animation: show 0.3s ease-in forwards
+
+@media screen and (max-width: 1224px)
+  .scroll-up
+    width: 5vw
+    height: 3.75vw
+
+@media screen and (max-width: 1024px)
+  .link
+    width: 17.5vw
+    padding: 0.75rem 1rem
+    font-size: 2vw
+@media screen and (max-width: 768px)
+  .link
+    width: 20vw
+    font-size: 2.5vw
+
+  .breadcrumbs
+    font-size: 2.25vw
+
+@media screen and (max-width: 480px)
+  .link
+    width: 50vw
+    font-size: 4vw
+  .breadcrumbs
+    font-size: 3.5vw

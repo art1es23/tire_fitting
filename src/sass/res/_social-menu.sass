@@ -1,0 +1,65 @@
+@import "./src/sass/helpers/var"
+
+.social-menu
+  display: flex
+  width: 100%
+  justify-content: center
+
+  &__item
+    margin: 0 1.5%
+    display: flex
+    justify-content: center
+    width: 2vw
+    height: 2vw
+    &:last-child
+      margin: 0
+
+  &__link
+    height: 100%
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    background-transition: $transition
+
+    &:hover,
+    &:focus,
+    &:active
+      transform: scale(1.1)
+
+.facebook
+  background-image: url("../img/sprite.svg#facebook")
+
+.reddit
+  background-image: url("../img/sprite.svg#reddit")
+
+.instagram
+  background-image: url("../img/sprite.svg#instagram")
+
+// @media screen and (max-width: 1600px)
+//   .social-menu
+//     &__item
+//       margin-right: 1rem
+
+// @media screen and (max-width: 1366px)
+//   .social-menu
+//     width: 70%
+//     &__item
+//       width: 4vw
+//       height: 4vw
+
+// @media screen and (max-width: 768px)
+//   .social-menu
+//     justify-content: flex-end
+//     &__item
+//       width: 5vw
+//       height: 5vw
+// @media screen and (max-width: 480px)
+//   .social-menu
+//     justify-content: flex-end
+//     &__item
+//       width: 12.5vw
+//       height: 12.5vw

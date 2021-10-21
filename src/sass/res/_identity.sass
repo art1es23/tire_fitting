@@ -1,0 +1,54 @@
+@import "./src/sass/helpers/var"
+
+.identity
+    width: 100%
+    display: flex
+
+    &--wrapper
+        width: 100%
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 5rem
+        align-content: center
+        padding: 10% 0
+
+    &__item
+        display: flex
+        width: 100%
+        flex-direction: column
+        justify-content: space-between
+
+.identity-group
+    &__title
+        font-size: calc( 1.5rem + 1vw )
+    &__descripiton
+        font-size: calc( 0.5rem + 1vw )
+        text-align: justify
+        margin: 5% 0
+
+.counter
+    display: grid
+    grid-template-columns: repeat(3, auto)
+    grid-gap: 1.5rem
+    text-align: center
+    &__item
+        background-color: $orange-yellow
+        padding: 10% 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+    &__icon
+        display: flex
+        height: 7.5vh
+        width: 3.5vw
+
+    &__caption
+        margin: 5% 0
+        font-size: calc( 0.5rem + 1vw )
+        font-weight: 500
+
+    &__number
+        font-weight: 500
+        font-size: calc( 0.5rem + 1vw )

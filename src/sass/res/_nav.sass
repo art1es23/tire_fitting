@@ -1,0 +1,121 @@
+@import "./src/sass/helpers/var"
+
+.navigation
+  width: 50%
+  margin: 0 auto 0 auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: relative
+
+  &--wrapper
+    display: flex
+    flex-direction: row
+    width: 100%
+    justify-content: space-between
+    align-items: center
+    margin: 0 auto
+
+    ul
+      display: none
+
+  &__item
+    display: flex
+    flex-direction: column
+    width: 100%
+    position: relative
+
+    &:hover,
+    &:focus,
+    &:active
+      & > ul
+        display: inherit
+
+  &__link
+    display: flex
+    padding: 1.5rem 0.75rem
+    width: 100%
+    justify-content: center
+    align-items: center
+    color: $white
+    font-size: 0.85vw
+    transition: $transition
+    text-transform: uppercase
+    &:hover,
+    &:focus,
+    &:active
+      color: $orange-yellow
+
+.menu
+  display: none
+  position: relative
+  width: 30px
+  height: 25px
+  margin: auto
+
+  &:hover
+    cursor: pointer
+
+  span
+    margin: 0 auto
+    top: 12px
+    position: relative
+    width: 100%
+    height: 6px
+    background-color: $black
+    display: block
+
+    &:before,
+    &:after
+      position: absolute
+      content: ''
+      width: 100%
+      height: 6px
+      background-color: $black
+      display: block
+
+    &:before
+      margin-top: -12px
+
+    &:after
+      margin-top: 12px
+
+  &--toggle
+    margin: 2.5% auto
+    span
+      transition-duration: 0s
+      background-color: rgba($black, 0)
+      transition-delay: 0.2s
+
+      &:before,
+      &:after
+        transition-property: margin, transform
+        transition-duration: 0.2s
+        transition-delay: 0.2s, 0s
+        margin-top: 0
+
+      &:before
+        transform: rotate(45deg)
+
+      &:after
+        transform: rotate(-45deg)
+
+.get-now
+
+@media screen and (max-width: 1366px)
+  .navigation__link
+    font-size: 1.2rem
+
+@media screen and (max-width: 1224px)
+  .menu
+    display: flex
+  .navigation
+    &--active
+      width: 50%
+      flex-direction: column
+    &--wrapper
+      display: none
+      &--active
+        margin: 0
+        display: flex
+        flex-direction: column

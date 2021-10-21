@@ -1,0 +1,45 @@
+@import "./src/sass/helpers/var"
+
+.header
+  width: 100%
+  display: flex
+  justify-content: space-around
+  align-items: center
+  background-color: rgba($black, 0.5)
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 9999
+  transition: $transition
+
+  &-img
+    width: 100%
+    height: 35vh
+
+    img
+      &:nth-child(even)
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 75%
+        height: 225%
+        transform: translateY(65%)
+
+  &--transparent
+    transition: $transition
+    background-color: rgba($black, 1)
+
+  &--mobile
+    flex-direction: column
+    height: 100vh
+    padding: 7.5% 0
+
+@media screen and (max-width: 768px)
+  .header
+    &-img
+      width: 100%
+      height: 100%
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
